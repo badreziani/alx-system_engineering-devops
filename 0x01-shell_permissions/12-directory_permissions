@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod u+x hello
+mkdir -m 751 my_dir
