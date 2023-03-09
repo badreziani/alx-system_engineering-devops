@@ -1,2 +1,4 @@
 #!/bin/bash
-chmod u+x hello
+chown julien hello
+chgrp julien hello
+chmod 753 hello
