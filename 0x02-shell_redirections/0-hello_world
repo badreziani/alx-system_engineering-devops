@@ -1,1 +1,1 @@
-echo -e "Hello, World\r"
+echo "Hello, World"
