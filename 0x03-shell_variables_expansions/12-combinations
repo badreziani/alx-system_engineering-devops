@@ -1,2 +1,2 @@
 #!/bin/bash
-PATH=$PATH:/action
+echo {a..z}{a..z} | tr " " "\n" | egrep -v "oo"
