@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# he command(s) you used to fix the issue
+# After running the container in the intercative mode using
+# this command docker exec -ti [the_container_id] /bin/bash
+# I use the following command to make sure if the apache2 is running
+service apache2 status
+# I got this result
+# * apache2 is not running
+# So I start the apache2 service using this command
+service apache2 start
+# and everything went good
