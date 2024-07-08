@@ -7,18 +7,16 @@ sudo apt -y install nginx
 # Add rules to the firewall
 sudo ufw allow 'Nginx HTTP'
 sudo ufw allow OpenSSH
-sudo ufw enable
-sudo ufw reload
 
 # Make a backup for the orginal conf file
-cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.back
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.back
 
 # Delete every line starting with #
-cat /etc/nginx/sites-available/default.back | grep -o '^[^#]*' > /etc/nginx/sites-available/default
+sudo cat /etc/nginx/sites-available/default.back | grep -o '^[^#]*' > /etc/nginx/sites-available/default
 
 # Add the header
 conf_line='\\t\tadd_header X-Served-By '$HOSTNAME';'
-sed -i "/try_files/a $conf_line" /etc/nginx/sites-available/default
+sudo sed -i "/try_files/a $conf_line" /etc/nginx/sites-available/default
 
 # Change the outbut of the default web page
 sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
