@@ -13,8 +13,8 @@ echo "frontend web80front
 	default_backend web80back
 
 backend web80back
-	server web-01 52.201.221.254
-	server web-02 54.234.42.193
+	server web-01 52.201.221.254 check
+	server web-02 54.234.42.193 check
 	mode http
 " | sudo tee -a /etc/haproxy/proxy.cfg
 
