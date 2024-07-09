@@ -21,4 +21,4 @@ sudo sed -i "/try_files/a $conf_line" /etc/nginx/sites-available/default
 sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
 
 # Restart nginx
-service nginx restart
+sudo service nginx restart
