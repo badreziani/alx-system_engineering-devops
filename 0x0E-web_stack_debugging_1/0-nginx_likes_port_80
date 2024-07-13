@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 # This script contains commands to fix Nginx port 80 issue
 
-# Remove nginx
 sudo service nginx stop
-sudo apt-get purge -y nginx
-sudo apt-get autoremove -y
-sudo rm -rf /etc/nginx /var/log/nginx
-
-# Install nginx
-sudo apt-get update
-sudo apt-get install -y nginx
-sudo service nginx restart
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx start
