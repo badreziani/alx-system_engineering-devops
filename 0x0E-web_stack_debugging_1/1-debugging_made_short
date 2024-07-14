@@ -2,4 +2,5 @@
 # This script contains commands to fix Nginx port 80 issue
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx start
-ps aux | grep 'nginx' | grep -v 'grep' | awk '{print $2}' | xargs kill
+# ps aux | grep 'nginx' | grep -v 'grep' | awk '{print $2}' | xargs kill
+pgrep 'nginx' | xargs kill
