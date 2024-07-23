@@ -1,8 +1,9 @@
-sudo apt install ufw
-sudo ufw enable
-sudo ufw app list
-sudo ufw status
-sudo ufw allow 'OpenSSH'
-sudo ufw allow 'Nginx HTTPS'
-sudo ufw allow 'Nginx HTTP'
-sudo ufw reload
+#!/usr/bin/env bash
+# Configures a ufw firewall
+
+apt install ufw
+ufw enable
+ufw allow 22/tcp
+ufw allow 443/tcp
+ufw allow 80/tcp
+ufw reload
