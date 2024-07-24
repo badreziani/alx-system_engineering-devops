@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script contains commands to fix Nginx port 80 issue
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+service nginx start
+pgrep 'nginx' | xargs kill
