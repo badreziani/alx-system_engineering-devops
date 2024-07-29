@@ -15,4 +15,4 @@ if __name__ == "__main__":
         len([t for t in todos if t.get("completed")]),
         len(todos)))
     for todo in todos:
-        print("    {}".format(todo.get("title")))
+        print("{}".format(todo.get("title")))
