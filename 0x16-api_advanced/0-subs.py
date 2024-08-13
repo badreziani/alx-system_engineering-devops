@@ -10,7 +10,7 @@ def number_of_subscribers(subreddit):
     queries the Reddit API and returns the number of subscribers
     If not a valid subreddit, return 0."""
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    response = requests.get(url)
+    response = requests.get(url, allow_redirects=False)
     if response.ok:
         return response.json().get('data').get('subscribers')
     else:
