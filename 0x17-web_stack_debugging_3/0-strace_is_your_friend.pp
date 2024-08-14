@@ -1,8 +1,6 @@
 # Fixes the 500 internel error for appache server
 
-file_line { 'edit_error_line':
-  path    => '/var/www/html/wp-settings.php',
-  line    => "require_once( ABSPATH . WPINC . '/class-wp-locale.php' );",
-  match   => "require_once( ABSPATH . WPINC . '/class-wp-locale.phpp' );",
-  replace => true,
+exec { 'fix-internal-error':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => '/usr/local/bin/:/bin/'
 }
