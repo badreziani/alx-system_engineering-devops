@@ -1,8 +1,6 @@
-file { '/var/www/html/wp-includes/class-wp-locale.php':
-  ensure => 'file',
-  source => '/var/www/html/wp-includes/class-wp-locale.phpp',
-}
-
-file { '/var/www/html/wp-includes/class-wp-locale.phpp':
-  ensure => 'absent',
+file_line { 'edit_error_line':
+  path    => '/var/www/html/wp-settings.php',
+  line    => "require_once( ABSPATH . WPINC . '/class-wp-locale.php' );",
+  match   => "require_once( ABSPATH . WPINC . '/class-wp-locale.phpp' );",
+  replace => true,
 }
