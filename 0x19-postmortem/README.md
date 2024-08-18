@@ -1,12 +1,12 @@
 # 0x19. Postmortem
 
-## >>> Issue Summary
+## Issue Summary
 
     Duration of Outage: The incident began at 11:45 AM and was resolved by 12:45 PM EAT (East African Time).
     Impact: The website was entirely inaccessible, with 100% of users unable to access the service due to the site not listening on port 80.
     Root Cause: The root cause was an incorrect configuration in the Nginx server setup. Specifically, the configuration file in sites-available was not properly linked to sites-enabled, which prevented Nginx from serving the website.
 
-## >>> Timeline
+## Timeline
 
     11:45 AM: The issue was first detected when ALX attempted to access the website and found it unresponsive.
     11:50 AM: Monitoring alerts from ALX confirmed the site was down. The issue was escalated to the engineering team.
@@ -38,4 +38,4 @@
     [ ] Implement a checklist for deploying configuration changes to ensure all necessary steps are completed.
     [ ] Schedule training sessions for the engineering team on best practices for Nginx configuration management.
 
-## This postmortem serves as a detailed record of the incident, ensuring that similar issues are prevented in the future by implementing the corrective actions listed above.
+####    This postmortem serves as a detailed record of the incident, ensuring that similar issues are prevented in the future by implementing the corrective actions listed above.
