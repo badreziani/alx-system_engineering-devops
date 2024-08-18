@@ -8,10 +8,9 @@
 
 ## Timeline
 
-    11:45 AM: The issue was first detected when ALX attempted to access the website and found it unresponsive.
-    11:50 AM: Monitoring alerts from ALX confirmed the site was down. The issue was escalated to the engineering team.
-    11:55 AM: Initial investigations focused on the Nginx configuration files. The team confirmed that the configuration files had no syntax errors.
-    12:10 PM: The team investigated services listening on port 80 and found that Nginx was not actively listening.
+    11:45 AM: The issue was first detected when attempting to access the website and found it unresponsive.
+    11:55 AM: Initial investigations focused on the Nginx configuration files. Confirmed that the configuration files had no syntax errors.
+    12:10 PM: Checking if listening on port 80 and found that Nginx was not actively listening.
     12:15 PM: Further investigation revealed that the configuration file in sites-available had not been linked to sites-enabled.
     12:30 PM: The configuration file was linked correctly, and the Nginx service was restarted to apply the changes.
     12:45 PM: The website was fully restored, and the incident was resolved.
