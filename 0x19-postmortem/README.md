@@ -16,15 +16,15 @@
     12:30 PM: The configuration file was linked correctly, and the Nginx service was restarted to apply the changes.
     12:45 PM: The website was fully restored, and the incident was resolved.
 
-## >>> Root Cause and Resolution
+## Root Cause and Resolution
 
 ### Root Cause:
-The Nginx server was correctly configured in the sites-available directory, but the configuration was not linked to the sites-enabled directory. This omission meant that the Nginx service was running without an active configuration, causing it not to listen on port 80, which in turn made the website inaccessible.
+    The Nginx server was correctly configured in the sites-available directory, but the configuration was not linked to the sites-enabled directory. This omission meant that the Nginx service was running without an active configuration, causing it not to listen on port 80, which in turn made the website inaccessible.
 
 ### Resolution:
-The issue was resolved by creating a symbolic link from the configuration file in sites-available to sites-enabled. Once the link was established, the Nginx service was restarted to apply the configuration, which restored the site’s accessibility.
+    The issue was resolved by creating a symbolic link from the configuration file in sites-available to sites-enabled. Once the link was established, the Nginx service was restarted to apply the configuration, which restored the site’s accessibility.
 
-## >>> Corrective and Preventative Measures
+## Corrective and Preventative Measures
 
 ### Improvements and Fixes:
 
@@ -38,4 +38,4 @@ The issue was resolved by creating a symbolic link from the configuration file i
     [ ] Implement a checklist for deploying configuration changes to ensure all necessary steps are completed.
     [ ] Schedule training sessions for the engineering team on best practices for Nginx configuration management.
 
-## >>> This postmortem serves as a detailed record of the incident, ensuring that similar issues are prevented in the future by implementing the corrective actions listed above.
+## This postmortem serves as a detailed record of the incident, ensuring that similar issues are prevented in the future by implementing the corrective actions listed above.
