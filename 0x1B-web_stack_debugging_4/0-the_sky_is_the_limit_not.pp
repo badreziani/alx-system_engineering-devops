@@ -1,7 +1,7 @@
 # Increases the amount of requests
 
 exec { 'increase_nginx_ulimit':
-  command => "/usr/bin/env sed -i 's/15"/4096/' /etc/default/nginx",
+  command => "/usr/bin/env sed -i 's/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/' /etc/default/nginx",
   notify  => Exec['restart_nginx'],
 }
 
