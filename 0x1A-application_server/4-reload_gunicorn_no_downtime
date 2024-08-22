@@ -1,11 +1,2 @@
 #!/usr/bin/env bash
 # This script reloads Gunicorn in a graceful way
-
-MASTER_PID=$(ps aux | grep '[g]unicorn' | awk '{print $2}')
-
-if [ -z "$MASTER_PID"]
-then
-    exit 1
-fi
-
-kill -HUP $MASTER_PID
